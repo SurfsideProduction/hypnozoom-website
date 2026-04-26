@@ -86,7 +86,7 @@ nav.scrolled .nav-toggle span { background: var(--white); }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: var(--slate) url('https://image.jimcdn.com/app/cms/image/transf/none/path/s43780d12d267dcca/backgroundarea/i00d27197fb72b396/version/1727213802/image.gif') center/cover no-repeat;
+  background: var(--slate) url('images/neuronen-background.gif') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
@@ -375,7 +375,7 @@ footer a:hover { color: var(--teal-light); }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: var(--slate) url('https://image.jimcdn.com/app/cms/image/transf/none/path/s43780d12d267dcca/backgroundarea/i00d27197fb72b396/version/1727213802/image.gif') center/cover no-repeat;
+  background: var(--slate) url('images/neuronen-background.gif') center/cover no-repeat;
 }
 .page-hero .hero-overlay {
   position: absolute;
