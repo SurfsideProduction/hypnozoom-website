@@ -631,6 +631,11 @@ footer a:hover { color: var(--teal-light); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .hero-logo-wrap {
+    transform: translateX(0);
+    gap: 1.2rem;
+  }
+  .hero-icon-img { height: 180px; }
   .person-inner {
     grid-template-columns: 1fr;
   }
