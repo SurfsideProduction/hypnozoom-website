@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praxis – HypnoZoom | Markus Baelli in Muri AG</title>
+  <meta name="description" content="Hypnosetherapie-Praxis von Markus Baelli im Klosterdorf Muri, Kanton Aargau. Ein ruhiger Ort für echte Veränderung.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="index.html" class="nav-logo" aria-label="HypnoZoom">
+      <img src="logo.png" alt="HypnoZoom" height="44">
+    </a>
+    <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ablauf.html">Ablauf</a></li>
+      <li><a href="praxis.html" class="active">Praxis</a></li>
+      <li><a href="preise.html">Preise</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-eyebrow">Wo wir arbeiten</p>
+      <h1 class="page-title">Muri AG –<br><span>ein Ort, der Raum schafft.</span></h1>
+    </div>
+  </section>
+
+  <div class="content-warm">
+    <p class="fade-in">Gerne empfange ich Sie in meiner Praxis im <strong>wunderschönen Klosterdorf Muri</strong> im Kanton Aargau – ein Ort, der Ruhe und Konzentration förmlich einlädt.</p>
+  </div>
+
+  <div class="content-section fade-in">
+    <p>Ein ruhiger Ort, der Raum schafft – für Vertrauen, Konzentration und echte Veränderung. Gute Energie braucht gute Umgebung.</p>
+    <p>Sitzungen sind selbstverständlich auch <strong>online möglich</strong> – für alle, die nicht persönlich in die Praxis kommen können oder möchten. Hypnose funktioniert auch über Videoverbindung überraschend gut.</p>
+
+    <div style="margin-top:3rem;">
+      <a href="ablauf.html" class="btn">Wie eine Sitzung abläuft →</a>
+      &nbsp;
+      <a href="preise.html" class="btn btn-outline">Preise ansehen →</a>
+    </div>
+  </div>
+
+  <section class="invitation">
+    <p class="invitation-text fade-in">
+      Bereit für den nächsten Schritt?<br>
+      <strong>Ich freue mich auf Ihr Anliegen.</strong>
+    </p>
+    <div class="contact-row fade-in">
+      <a href="tel:+41565351543">☎ 056 535 15 43</a>
+      <a href="mailto:info@hypnozoom.ch">✉ info@hypnozoom.ch</a>
+    </div>
+    <p class="praxis-hint fade-in">Praxis in Muri AG · Sitzungen auch online möglich</p>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <span style="font-size:1.3rem;font-weight:700;color:var(--teal-light);letter-spacing:0.02em;">HypnoZoom</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-parent">Eine Website von <a href="https://www.baelli.com" target="_blank">baelli-innovations</a></p>
+    <p>© 2026 hypnozoom · Markus Baelli · Muri AG</p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

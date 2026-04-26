@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preise – HypnoZoom | Markus Baelli</title>
+  <meta name="description" content="Transparente Preise für Hypnosetherapie bei Markus Baelli. Ersttermin Fr. 390.–, Folgetermine Fr. 150.–.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="index.html" class="nav-logo" aria-label="HypnoZoom">
+      <img src="logo.png" alt="HypnoZoom" height="44">
+    </a>
+    <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ablauf.html">Ablauf</a></li>
+      <li><a href="praxis.html">Praxis</a></li>
+      <li><a href="preise.html" class="active">Preise</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-eyebrow">Transparenz ist mir wichtig</p>
+      <h1 class="page-title"><span>Klare Preise –</span><br>keine Überraschungen.</h1>
+    </div>
+  </section>
+
+  <div class="content-section">
+    <div class="preis-grid fade-in">
+      <div class="preis-card">
+        <h3>Ersttermin</h3>
+        <div class="preis">Fr. 390.–</div>
+        <p>Rund 3 Stunden. Beinhaltet die Anamnese, ein ausführliches Vorgespräch und die erste Hypnosesitzung.</p>
+      </div>
+      <div class="preis-card">
+        <h3>Folgetermine</h3>
+        <div class="preis">Fr. 150.–</div>
+        <p>Pro Stunde. Gilt auch für musikbasiertes Achtsamkeitstraining.</p>
+      </div>
+    </div>
+
+    <div class="fade-in" style="margin-top:3.5rem;">
+      <p>Hypnosetherapie wird von der Grundversicherung in der Regel nicht übernommen. In der Schweiz ist Hypnose jedoch als therapeutische Methode anerkannt – insbesondere in der Medizin und Psychotherapie.</p>
+      <p>Sprechen Sie Ihre Zusatzversicherung an – manche übernehmen Kosten teilweise.</p>
+    </div>
+  </div>
+
+  <section class="invitation">
+    <p class="invitation-text fade-in">
+      Bereit für den nächsten Schritt?<br>
+      <strong>Ich freue mich auf Ihr Anliegen.</strong>
+    </p>
+    <div class="contact-row fade-in">
+      <a href="tel:+41565351543">☎ 056 535 15 43</a>
+      <a href="mailto:info@hypnozoom.ch">✉ info@hypnozoom.ch</a>
+    </div>
+    <p class="praxis-hint fade-in">Praxis in Muri AG · Sitzungen auch online möglich</p>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <span style="font-size:1.3rem;font-weight:700;color:var(--teal-light);letter-spacing:0.02em;">HypnoZoom</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-parent">Eine Website von <a href="https://www.baelli.com" target="_blank">baelli-innovations</a></p>
+    <p>© 2026 hypnozoom · Markus Baelli · Muri AG</p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

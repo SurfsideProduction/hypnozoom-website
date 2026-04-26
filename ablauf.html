@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ablauf einer Sitzung – HypnoZoom | Markus Baelli</title>
+  <meta name="description" content="So läuft eine Hypnosesitzung bei Markus Baelli ab – Vorgespräch, Hypnose, Nachgespräch. Vertrauensvoll und klar.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="index.html" class="nav-logo" aria-label="HypnoZoom">
+      <img src="logo.png" alt="HypnoZoom" height="44">
+    </a>
+    <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ablauf.html" class="active">Ablauf</a></li>
+      <li><a href="praxis.html">Praxis</a></li>
+      <li><a href="preise.html">Preise</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="page-eyebrow">So funktioniert es</p>
+      <h1 class="page-title"><span>Eine Sitzung –</span><br>vertrauensvoll und klar.</h1>
+    </div>
+  </section>
+
+  <div class="content-warm">
+    <p class="fade-in">Eine Hypnosesitzung bei mir folgt einem <strong>klaren, vertrauensvollen Rahmen.</strong> Sie wissen immer, was als Nächstes kommt.</p>
+  </div>
+
+  <div class="content-section fade-in">
+    <div class="ablauf-step">
+      <div class="step-number">1</div>
+      <div class="step-body">
+        <h2>Vorgespräch</h2>
+        <p>Wir starten mit einem Vorgespräch: Ich lerne Sie und Ihr Anliegen kennen, erkläre wie Hypnose wirklich funktioniert – und beantworte alle Fragen, bevor wir beginnen. Kein Rätselraten, keine Überraschungen.</p>
+      </div>
+    </div>
+
+    <div class="ablauf-step">
+      <div class="step-number">2</div>
+      <div class="step-body">
+        <h2>Die Hypnose</h2>
+        <p>Während der Hypnose bleiben Sie jederzeit ansprechbar und in voller Kontrolle. Ihr Bewusstsein tritt einen Schritt zurück, was mir ermöglicht, direkt mit Ihrem Unterbewusstsein zu arbeiten.</p>
+        <p><strong>Hypnose ist kein Schlaf</strong> – Ihr Gehirn ist in diesem Moment hochaktiv. Viele Menschen beschreiben es als einen Zustand tiefer Entspannung und Klarheit.</p>
+      </div>
+    </div>
+
+    <div class="ablauf-step">
+      <div class="step-number">3</div>
+      <div class="step-body">
+        <h2>Nachgespräch</h2>
+        <p>Im Nachgespräch reflektieren wir gemeinsam, was Sie erlebt haben, und verankern die neuen inneren Bilder. Eine gewisse Müdigkeit danach ist normal – Ihr Gehirn hat Höchstleistungen erbracht.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;">
+      <a href="preise.html" class="btn">Preise ansehen →</a>
+      &nbsp;
+      <a href="index.html#kontakt" class="btn btn-outline">Termin anfragen →</a>
+    </div>
+  </div>
+
+  <section class="invitation">
+    <p class="invitation-text fade-in">
+      Bereit für den nächsten Schritt?<br>
+      <strong>Ich freue mich auf Ihr Anliegen.</strong>
+    </p>
+    <div class="contact-row fade-in">
+      <a href="tel:+41565351543">☎ 056 535 15 43</a>
+      <a href="mailto:info@hypnozoom.ch">✉ info@hypnozoom.ch</a>
+    </div>
+    <p class="praxis-hint fade-in">Praxis in Muri AG · Sitzungen auch online möglich</p>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <span style="font-size:1.3rem;font-weight:700;color:var(--teal-light);letter-spacing:0.02em;">HypnoZoom</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-parent">Eine Website von <a href="https://www.baelli.com" target="_blank">baelli-innovations</a></p>
+    <p>© 2026 hypnozoom · Markus Baelli · Muri AG</p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
