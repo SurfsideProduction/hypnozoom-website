@@ -74,10 +74,45 @@
     </p>
     <div class="contact-row fade-in">
       <a href="tel:+41565351543">Anrufen</a>
-      <a href="mailto:info@hypnozoom.ch">Mail</a>
+      <button class="btn-kontakt" onclick="openKontakt()">✉ Nachricht</button>
     </div>
     <p class="praxis-hint fade-in">Praxis in Muri AG · Sitzungen auch online möglich</p>
   </section>
+
+  
+  <!-- KONTAKT POPUP -->
+  <div id="kontakt-overlay" onclick="closeKontakt(event)">
+    <div class="kontakt-modal">
+      <button class="kontakt-close" onclick="closeKontakt()">&times;</button>
+      <h2>Kontaktanfrage</h2>
+      <p class="kontakt-hint">Ihre Nachricht wird direkt über Ihr E-Mail-Programm verschickt – vertraulich und ohne Umwege.</p>
+      <form id="kontakt-form" onsubmit="sendKontakt(event)">
+        <div class="kontakt-row">
+          <div class="kontakt-field">
+            <label>Vorname</label>
+            <input type="text" name="vorname" required placeholder="Ihr Vorname">
+          </div>
+          <div class="kontakt-field">
+            <label>Nachname</label>
+            <input type="text" name="nachname" required placeholder="Ihr Nachname">
+          </div>
+        </div>
+        <div class="kontakt-field">
+          <label>Telefon</label>
+          <input type="tel" name="telefon" placeholder="z.B. 056 123 45 67">
+        </div>
+        <div class="kontakt-field">
+          <label>E-Mail</label>
+          <input type="email" name="email" required placeholder="ihre@email.ch">
+        </div>
+        <div class="kontakt-field">
+          <label>Ihre Nachricht</label>
+          <textarea name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Anliegen…"></textarea>
+        </div>
+        <button type="submit" class="kontakt-submit">Nachricht senden →</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-logo">
@@ -100,6 +135,40 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Kontakt-Popup
+    function openKontakt() {
+      document.getElementById('kontakt-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeKontakt(e) {
+      if (e && e.target !== document.getElementById('kontakt-overlay')) return;
+      document.getElementById('kontakt-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('kontakt-overlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    function sendKontakt(e) {
+      e.preventDefault();
+      const f = e.target;
+      const vorname   = f.vorname.value.trim();
+      const nachname  = f.nachname.value.trim();
+      const telefon   = f.telefon.value.trim() || '–';
+      const email     = f.email.value.trim();
+      const nachricht = f.nachricht.value.trim();
+      const body =
+        `Vorname: ${vorname}\n` +
+        `Nachname: ${nachname}\n` +
+        `Telefon: ${telefon}\n` +
+        `E-Mail: ${email}\n\n` +
+        `Nachricht:\n${nachricht}`;
+      window.location.href =
+        `mailto:info@baelli.com?subject=${encodeURIComponent('Kontaktanfrage hypnozoom.ch')}&body=${encodeURIComponent(body)}`;
+    }
   </script>
 </body>
 </html>
