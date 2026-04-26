@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – HypnoZoom | Markus Baelli</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-hero {
+      height: 30vh;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--dark);
+    }
+    .legal-hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .legal-hero h1 strong { color: var(--teal-light); font-weight: 700; }
+    .legal-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .legal-content h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 2.5rem 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 0.4rem;
+    }
+    .legal-content a { color: var(--teal); text-decoration: none; }
+    .legal-content a:hover { color: var(--teal-light); }
+    .legal-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--teal);
+      margin: 0.6rem 0 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="index.html" class="nav-logo" aria-label="HypnoZoom">
+      <img src="logo.png" alt="HypnoZoom" height="44">
+    </a>
+    <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ablauf.html">Ablauf</a></li>
+      <li><a href="praxis.html">Praxis</a></li>
+      <li><a href="preise.html">Preise</a></li>
+    </ul>
+  </nav>
+
+  <div class="legal-hero">
+    <h1><strong>Impressum</strong></h1>
+  </div>
+
+  <div class="legal-content">
+
+    <h2>Angaben gemäss Art. 3 UWG</h2>
+    <div class="legal-divider"></div>
+    <p><strong>HypnoZoom – Hypnosetherapie</strong></p>
+    <p>Markus Baelli</p>
+    <p>Kirchenfeldstrasse 56</p>
+    <p>5630 Muri AG</p>
+    <p>Schweiz</p>
+
+    <h2>Kontakt</h2>
+    <div class="legal-divider"></div>
+    <p>Telefon: <a href="tel:+41565351543">+41 56 535 15 43</a></p>
+    <p>E-Mail: <a href="mailto:info@baelli.com">info@baelli.com</a></p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <div class="legal-divider"></div>
+    <p>Markus Baelli, Kirchenfeldstrasse 56, 5630 Muri AG</p>
+    <p>Zertifizierter Hypnosetherapeut (OMNI), Mitglied des Schweizerischen Berufsverbands für Hypnosetherapie (SBVH)</p>
+
+    <h2>Haftungsausschluss</h2>
+    <div class="legal-divider"></div>
+    <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter bin ich für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+    <p>Für externe Links zu fremden Webseiten übernehme ich keine Haftung. Für den Inhalt der verlinkten Seiten sind ausschliesslich deren Betreiber verantwortlich.</p>
+    <p>Die Hypnosetherapie ist eine anerkannte Methode der Komplementärmedizin und ersetzt keine ärztliche oder psychotherapeutische Behandlung.</p>
+
+    <h2>Urheberrecht</h2>
+    <div class="legal-divider"></div>
+    <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors.</p>
+
+  </div>
+
+  <footer>
+    <div class="footer-logo">
+      <span style="font-size:1.3rem;font-weight:700;color:var(--teal-light);letter-spacing:0.02em;">HypnoZoom</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-parent">Eine Website von <a href="https://surfsideproduction.github.io/baelli-website" target="_blank" rel="noopener noreferrer">baelli-innovations</a></p>
+    <p>© 2026 hypnozoom · Markus Baelli · Muri AG</p>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
