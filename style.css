@@ -438,6 +438,52 @@ footer a:hover { color: var(--teal-light); }
 }
 .content-warm strong { color: var(--teal-dark); font-weight: 600; }
 
+/* ===== PRAXISRAUM FOTO ===== */
+.praxisraum-foto {
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  max-width: 860px;
+  box-sizing: border-box;
+  position: relative;
+}
+.praxisraum-foto .foto-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.praxisraum-foto img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 520px;
+  filter: grayscale(30%) brightness(0.85);
+  transition: filter 0.5s ease;
+}
+.praxisraum-foto .foto-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(42, 110, 107, 0.35);
+  mix-blend-mode: multiply;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.praxisraum-foto .foto-wrap:hover::after {
+  opacity: 0.15;
+}
+.praxisraum-foto .foto-wrap:hover img {
+  filter: grayscale(0%) brightness(0.95);
+}
+.praxisraum-foto figcaption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 0.9rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
 /* ===== PREIS CARDS ===== */
 .preis-grid {
   display: grid;
