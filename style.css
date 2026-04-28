@@ -365,6 +365,58 @@ footer a:hover { color: var(--teal-light); }
 .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.6rem; }
 .footer-parent { margin-bottom: 0.4rem; font-size: 0.8rem; }
 
+/* ===== ZERTIFIZIERUNGEN ===== */
+.certifications {
+  margin-bottom: 2rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.cert-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.32);
+  margin-bottom: 1.2rem;
+}
+.cert-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+.cert-item {
+  background: rgba(255,255,255,0.93);
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+.cert-item:hover { opacity: 0.82; transform: translateY(-2px); }
+.cert-item img {
+  height: 62px;
+  width: auto;
+  display: block;
+}
+/* SBVH Banner: crop white space at bottom via object-fit */
+.cert-item-sbvh {
+  padding: 0;
+}
+.cert-item-sbvh img {
+  width: 220px;
+  height: 72px;
+  object-fit: cover;
+  object-position: top center;
+}
+@media (max-width: 600px) {
+  .cert-logos { gap: 1rem; }
+  .cert-item-sbvh img { width: 180px; height: 60px; }
+  .cert-item img { height: 52px; }
+}
+
 /* ===== PAGE HERO (Unterseiten) ===== */
 .page-hero {
   position: relative;
@@ -482,6 +534,53 @@ footer a:hover { color: var(--teal-light); }
   margin-top: 0.9rem;
   font-style: italic;
   letter-spacing: 0.04em;
+}
+
+/* ===== DIPLOM ===== */
+.diplom-section {
+  background: var(--slate);
+  padding: 4.5rem 2rem;
+  text-align: center;
+}
+.diplom-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--teal-light);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+.diplom-text {
+  color: rgba(255,255,255,0.6);
+  max-width: 580px;
+  margin: 0 auto 2.8rem;
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+.diplom-text strong { color: rgba(255,255,255,0.85); }
+.diplom-wrap {
+  max-width: 180px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+  transition: max-width 0.5s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  cursor: zoom-in;
+}
+.diplom-wrap:hover {
+  max-width: 680px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.65);
+  transform: translateY(-4px);
+  cursor: zoom-out;
+}
+.diplom-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .diplom-section { padding: 3rem 1.2rem; }
+  .diplom-wrap { max-width: 100%; }
 }
 
 /* ===== PREIS CARDS ===== */
