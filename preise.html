@@ -200,6 +200,16 @@
         `Nachricht:\n${nachricht}`;
       window.location.href =
         `mailto:info@baelli.com?subject=${encodeURIComponent('Kontaktanfrage hypnozoom.ch')}&body=${encodeURIComponent(body)}`;
+      setTimeout(function() {
+        const form = document.getElementById('kontakt-form');
+        form.innerHTML = `
+          <div class="kontakt-bestaetigung">
+            <div class="check-icon">✓</div>
+            <h3>Vielen Dank für Ihre Nachricht!</h3>
+            <p>Ihr E-Mail-Programm hat sich geöffnet.<br>Ich werde mich zeitnah bei Ihnen melden.</p>
+            <button class="btn-schliessen" onclick="closeKontakt()">Schliessen</button>
+          </div>`;
+      }, 600);
     }
   </script>
 </body>

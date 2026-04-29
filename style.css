@@ -763,6 +763,37 @@ footer a:hover { color: var(--teal-light); }
 }
 .kontakt-submit:hover { background: var(--teal-dark); }
 
+.kontakt-bestaetigung {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.kontakt-bestaetigung .check-icon {
+  font-size: 3rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+.kontakt-bestaetigung h3 {
+  font-size: 1.4rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+.kontakt-bestaetigung p {
+  color: var(--text-muted, #aaa);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.kontakt-bestaetigung .btn-schliessen {
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.kontakt-bestaetigung .btn-schliessen:hover { background: var(--teal-dark); }
+
 @media (max-width: 540px) {
   .kontakt-row { grid-template-columns: 1fr; }
   .kontakt-modal { padding: 2rem 1.5rem; }
