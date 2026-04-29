@@ -682,6 +682,8 @@ footer a:hover { color: var(--teal-light); }
   position: relative;
   border-top: 4px solid var(--teal);
   animation: modalIn 0.25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 @keyframes modalIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -776,11 +778,19 @@ footer a:hover { color: var(--teal-light); }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .hero { overflow: hidden; }
   .hero-logo-wrap {
     transform: translateX(0);
-    gap: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
-  .hero-icon-img { height: 180px; }
+  .hero-icon-img { height: 120px; }
+  .hero-brand { align-items: center; text-align: center; }
+  .hero-brand-name { font-size: 2.8rem; }
+  .hero-brand-sub { font-size: 1.2rem; letter-spacing: 0.08em; }
+  .hero-content { padding: 2rem 1.5rem; }
   .person-inner {
     grid-template-columns: 1fr;
   }
