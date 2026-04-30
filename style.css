@@ -246,6 +246,38 @@ nav.scrolled .nav-toggle span { background: var(--white); }
   margin-top: 0.3rem;
 }
 
+/* ===== ERFAHRUNGEN ===== */
+.erfahrungen {
+  background: var(--white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.erfahrungen h2 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3rem;
+}
+.erfahrungen-liste {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.erfahrung-item {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gray);
+  line-height: 1.8;
+}
+.erfahrung-item span {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--teal);
+  margin-left: 0.4em;
+}
+
 /* ===== PERSON ===== */
 .person {
   background: var(--slate);
