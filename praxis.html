@@ -126,32 +126,39 @@
     <div class="kontakt-modal">
       <button class="kontakt-close" onclick="closeKontakt()">&times;</button>
       <h2>Kontaktanfrage</h2>
-      <p class="kontakt-hint">Ihre Nachricht wird direkt über Ihr E-Mail-Programm verschickt – vertraulich und ohne Umwege.</p>
-      <form id="kontakt-form" onsubmit="sendKontakt(event)">
+      <p class="kontakt-hint">Schreiben Sie mir kurz, worum es geht. Ich melde mich in der Regel innert eines Arbeitstages.</p>
+      <form id="kontakt-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="sendKontakt(event)">
+        <input type="hidden" name="access_key" value="8c406a0c-f877-4510-b505-d80397eaa93c">
+        <input type="hidden" name="subject" value="Neue Anfrage über hypnozoom.ch">
+        <input type="hidden" name="from_name" value="hypnozoom.ch Kontaktformular">
+        <input type="checkbox" name="botcheck" class="kontakt-hp" tabindex="-1" autocomplete="off">
         <div class="kontakt-row">
           <div class="kontakt-field">
             <label>Vorname</label>
-            <input type="text" name="vorname" required placeholder="Ihr Vorname">
+            <input type="text" name="vorname" autocomplete="given-name" required placeholder="Ihr Vorname">
           </div>
           <div class="kontakt-field">
             <label>Nachname</label>
-            <input type="text" name="nachname" required placeholder="Ihr Nachname">
+            <input type="text" name="nachname" autocomplete="family-name" required placeholder="Ihr Nachname">
           </div>
         </div>
         <div class="kontakt-field">
           <label>Telefon</label>
-          <input type="tel" name="telefon" placeholder="z.B. 056 123 45 67">
+          <input type="tel" name="telefon" autocomplete="tel" placeholder="z.B. 056 123 45 67">
         </div>
         <div class="kontakt-field">
           <label>E-Mail</label>
-          <input type="email" name="email" required placeholder="ihre@email.ch">
+          <input type="email" name="email" autocomplete="email" required placeholder="ihre@email.ch">
         </div>
         <div class="kontakt-field">
           <label>Ihre Nachricht</label>
           <textarea name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Anliegen…"></textarea>
         </div>
         <button type="submit" class="kontakt-submit">Nachricht senden →</button>
+        <p class="kontakt-status" id="kontakt-status" role="status" aria-live="polite"></p>
+        <p class="kontakt-datenschutz">Ihre Angaben verwende ich ausschliesslich, um Ihre Anfrage zu beantworten. Näheres in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
       </form>
+      <p class="kontakt-direkt">Oder direkt: <a href="tel:+41565351543">056 535 15 43</a> · <a href="mailto:info@baelli.com">info@baelli.com</a></p>
     </div>
   </div>
 
@@ -210,29 +217,39 @@
     function sendKontakt(e) {
       e.preventDefault();
       const f = e.target;
-      const vorname   = f.vorname.value.trim();
-      const nachname  = f.nachname.value.trim();
-      const telefon   = f.telefon.value.trim() || '–';
-      const email     = f.email.value.trim();
-      const nachricht = f.nachricht.value.trim();
-      const body =
-        `Vorname: ${vorname}\n` +
-        `Nachname: ${nachname}\n` +
-        `Telefon: ${telefon}\n` +
-        `E-Mail: ${email}\n\n` +
-        `Nachricht:\n${nachricht}`;
-      window.location.href =
-        `mailto:info@baelli.com?subject=${encodeURIComponent('Kontaktanfrage hypnozoom.ch')}&body=${encodeURIComponent(body)}`;
-      setTimeout(function() {
-        const form = document.getElementById('kontakt-form');
-        form.innerHTML = `
-          <div class="kontakt-bestaetigung">
-            <div class="check-icon">✓</div>
-            <h3>Vielen Dank für Ihre Nachricht!</h3>
-            <p>Ihr E-Mail-Programm hat sich geöffnet.<br>Ich werde mich zeitnah bei Ihnen melden.</p>
-            <button class="btn-schliessen" onclick="closeKontakt()">Schliessen</button>
-          </div>`;
-      }, 600);
+      const status = document.getElementById('kontakt-status');
+      const key = f.querySelector('input[name="access_key"]').value;
+      const btn = f.querySelector('.kontakt-submit');
+      status.style.display = 'block';
+      if (key.indexOf('EINSETZEN') !== -1) {
+        status.className = 'kontakt-status fehler';
+        status.textContent = 'Der Formularversand ist noch nicht aktiviert. Bitte rufen Sie an oder schreiben Sie an info@baelli.com – beides steht direkt darunter.';
+        return;
+      }
+      status.className = 'kontakt-status';
+      status.textContent = 'Wird gesendet …';
+      btn.disabled = true;
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(r => r.json())
+        .then(d => {
+          if (d.success) {
+            document.getElementById('kontakt-form').innerHTML =
+              '<div class="kontakt-bestaetigung">' +
+              '<div class="check-icon">✓</div>' +
+              '<h3>Vielen Dank für Ihre Nachricht!</h3>' +
+              '<p>Ihre Anfrage ist bei mir angekommen.<br>Ich melde mich in der Regel innert eines Arbeitstages.</p>' +
+              '<button class="btn-schliessen" onclick="closeKontakt()">Schliessen</button>' +
+              '</div>';
+          } else {
+            zeigeFehler(status, btn);
+          }
+        })
+        .catch(() => zeigeFehler(status, btn));
+    }
+    function zeigeFehler(status, btn) {
+      btn.disabled = false;
+      status.className = 'kontakt-status fehler';
+      status.textContent = 'Das Senden hat leider nicht geklappt. Bitte rufen Sie an unter 056 535 15 43 oder schreiben Sie an info@baelli.com.';
     }
   </script>
 </body>
