@@ -433,6 +433,27 @@ footer a:hover { color: var(--teal-light); }
   width: auto;
   display: block;
 }
+
+/* ISO-Badge mit Bildunterschrift: bezieht sich auf die Ausbildung, nicht auf die Praxis */
+.cert-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+.cert-caption {
+  font-size: 0.63rem;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  max-width: 200px;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .cert-caption { font-size: 0.6rem; }
+}
+
 /* SBVH Banner: crop white space at bottom via object-fit */
 .cert-item-sbvh {
   padding: 0;
