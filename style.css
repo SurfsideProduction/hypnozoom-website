@@ -413,11 +413,21 @@ footer a:hover { color: var(--teal-light); }
 .cert-logos {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1.8rem;
+  align-items: flex-start;
+  gap: 2rem;
   flex-wrap: wrap;
 }
+.cert-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  width: 200px;
+}
 .cert-item {
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.93);
   border-radius: 8px;
   padding: 0.55rem 0.8rem;
@@ -429,17 +439,19 @@ footer a:hover { color: var(--teal-light); }
 }
 .cert-item:hover { opacity: 0.82; transform: translateY(-2px); }
 .cert-item img {
-  height: 62px;
+  max-height: 62px;
+  max-width: 100%;
   width: auto;
   display: block;
 }
-
-/* ISO-Badge mit Bildunterschrift: bezieht sich auf die Ausbildung, nicht auf die Praxis */
-.cert-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.55rem;
+/* SBVH Banner: crop white space at bottom via object-fit */
+.cert-item-sbvh { padding: 0; }
+.cert-item-sbvh img {
+  width: 100%;
+  height: 80px;
+  max-height: 80px;
+  object-fit: cover;
+  object-position: top center;
 }
 .cert-caption {
   font-size: 0.63rem;
@@ -447,27 +459,15 @@ footer a:hover { color: var(--teal-light); }
   letter-spacing: 0.04em;
   color: rgba(255,255,255,0.45);
   text-align: center;
-  max-width: 200px;
   margin: 0;
 }
 @media (max-width: 600px) {
-  .cert-caption { font-size: 0.6rem; }
-}
-
-/* SBVH Banner: crop white space at bottom via object-fit */
-.cert-item-sbvh {
-  padding: 0;
-}
-.cert-item-sbvh img {
-  width: 220px;
-  height: 72px;
-  object-fit: cover;
-  object-position: top center;
-}
-@media (max-width: 600px) {
-  .cert-logos { gap: 1rem; }
-  .cert-item-sbvh img { width: 180px; height: 60px; }
-  .cert-item img { height: 52px; }
+  .cert-logos { gap: 1.2rem; }
+  .cert-block { width: 145px; }
+  .cert-item { height: 62px; padding: 0.4rem 0.6rem; }
+  .cert-item img { max-height: 48px; }
+  .cert-item-sbvh img { width: 100%; height: 62px; max-height: 62px; }
+  .cert-caption { font-size: 0.58rem; }
 }
 
 /* ===== PAGE HERO (Unterseiten) ===== */
