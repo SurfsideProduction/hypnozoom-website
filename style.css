@@ -86,7 +86,7 @@ nav.scrolled .nav-toggle span { background: var(--white); }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: var(--slate) url('images/neuronen-background.gif') center/cover no-repeat;
+  background: var(--slate) url('images/neuronen-poster.jpg') center/cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
@@ -480,7 +480,7 @@ footer a:hover { color: var(--teal-light); }
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  background: var(--slate) url('images/neuronen-background.gif') center/cover no-repeat;
+  background: var(--slate) url('images/neuronen-poster.jpg') center/cover no-repeat;
 }
 .page-hero .hero-overlay {
   position: absolute;
@@ -936,3 +936,18 @@ footer a:hover { color: var(--teal-light); }
   font-weight: 600;
 }
 .kontakt-direkt a:hover { text-decoration: underline; }
+
+
+/* ===== HERO-VIDEO (15.09.2026, ersetzt das 9,9-MB-GIF) ===== */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  video.hero-bg { display: none; }
+}
