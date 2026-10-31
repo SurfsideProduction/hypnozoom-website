@@ -951,3 +951,14 @@ footer a:hover { color: var(--teal-light); }
 @media (prefers-reduced-motion: reduce) {
   video.hero-bg { display: none; }
 }
+
+/* ===== FOOTER: SUBZOOM-APP ===== */
+.footer-app { display:flex; align-items:center; justify-content:center; gap:1.2rem; flex-wrap:wrap; margin:0 auto 2rem; padding-bottom:1.8rem; border-bottom:1px solid rgba(255,255,255,0.1); }
+.footer-app-icon { width:56px; height:56px; border-radius:13px; display:block; }
+.footer-app-text { text-align:left; }
+.footer-app-title { color:rgba(255,255,255,0.72); font-size:0.95rem; font-weight:600; line-height:1.4; margin:0; }
+.footer-app-sub { margin:0.2rem 0 0; font-size:0.8rem; line-height:1.5; }
+.footer-app-sub a { text-decoration:underline; text-underline-offset:2px; }
+.footer-app-badge { line-height:0; }
+.footer-app-badge img { height:40px; width:auto; display:block; }
+@media (max-width:600px) { .footer-app { flex-direction:column; gap:0.9rem; } .footer-app-text { text-align:center; } }

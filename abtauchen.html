@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom</title>
+  <meta name="description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="abtauchen.css">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="P6n1_zVhU4MIwN9poVW1xoypxf4h9SmWYmA_CE-PF7g">
+  <link rel="canonical" href="https://hypnozoom.ch/abtauchen.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
+  <meta property="og:description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta property="og:url" content="https://hypnozoom.ch/abtauchen.html">
+  <meta property="og:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
+  <meta property="og:locale" content="de_CH">
+  <meta property="og:site_name" content="HypnoZoom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
+  <meta name="twitter:description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta name="twitter:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Subzoom: Reise nach innen",
+    "description": "Atem- und Klangreise: Atmen, Augen schliessen, der Bildschirm wird dunkel. Mit Klängen wie U-Boot, Wald oder Rauschen.",
+    "operatingSystem": "Alle (Browser); App für iOS 16.0 oder neuer",
+    "browserRequirements": "Moderner Browser mit Web Audio",
+    "applicationCategory": "LifestyleApplication",
+    "downloadUrl": "https://apps.apple.com/ch/app/subzoom-reise-nach-innen/id6827326550",
+    "url": "https://hypnozoom.ch/abtauchen.html",
+    "image": "https://hypnozoom.ch/images/app-subzoom.jpg",
+    "inLanguage": "de-CH",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CHF" },
+    "author": { "@type": "Person", "name": "Markus Baelli" }
+  }
+  </script>
+</head>
+<body>
+
+  <nav id="navbar" class="scrolled">
+    <a href="index.html" class="nav-logo" aria-label="HypnoZoom">
+      <img src="logo.png" alt="HypnoZoom" height="44">
+    </a>
+    <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ablauf.html">Ablauf</a></li>
+      <li><a href="praxis.html">Praxis</a></li>
+      <li><a href="preise.html">Preise</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="abtauchen.html" class="active">Abtauchen</a></li>
+    </ul>
+  </nav>
+
+  <main class="az-stage" id="reise" aria-label="Subzoom – eine Reise nach innen">
+    <canvas class="az-fog" id="azFog" aria-hidden="true"></canvas>
+
+    <div class="az-flow" id="azFlow">
+
+      <!-- 1. Einstieg: U-Boot und kleine Geschichte -->
+      <section class="az-card az-panel az-intro az-fadein" id="azIntro">
+        <svg class="az-sub-svg" viewBox="0 0 290 190" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="azHull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F8F3"/><stop offset="1" stop-color="#C8D8C9"/></linearGradient>
+            <linearGradient id="azTower" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2F6F1"/><stop offset="1" stop-color="#D3E0D3"/></linearGradient>
+            <clipPath id="azClip"><rect width="290" height="190"/></clipPath>
+          </defs>
+          <g clip-path="url(#azClip)" fill="none" stroke="#fff" stroke-width="1.5">
+            <circle cx="145" cy="95" r="60" opacity="0"><animate attributeName="r" values="60;145" dur="5.55s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.24;0" dur="5.55s" begin="0s" repeatCount="indefinite"/></circle>
+            <circle cx="145" cy="95" r="60" opacity="0"><animate attributeName="r" values="60;145" dur="5.55s" begin="-1.85s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.24;0" dur="5.55s" begin="-1.85s" repeatCount="indefinite"/></circle>
+            <circle cx="145" cy="95" r="60" opacity="0"><animate attributeName="r" values="60;145" dur="5.55s" begin="-3.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.24;0" dur="5.55s" begin="-3.7s" repeatCount="indefinite"/></circle>
+            <circle cx="167" cy="13" r="3" opacity="0"><animate attributeName="cy" values="13;1" dur="4.5s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="4.5s" begin="0s" repeatCount="indefinite"/></circle>
+            <circle cx="174" cy="13" r="4" opacity="0"><animate attributeName="cy" values="13;1" dur="4.5s" begin="-1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="4.5s" begin="-1.5s" repeatCount="indefinite"/></circle>
+            <circle cx="181" cy="13" r="5" opacity="0"><animate attributeName="cy" values="13;1" dur="4.5s" begin="-3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0" dur="4.5s" begin="-3s" repeatCount="indefinite"/></circle>
+          </g>
+          <g class="az-bob" stroke="none">
+            <rect x="56" y="90" width="14" height="10" rx="2" fill="#9DB59E"/>
+            <rect x="49" y="76" width="8" height="38" rx="3" fill="#A9BFAA"/>
+            <rect x="156.500" y="17" width="5" height="24" rx="2.500" fill="#DDE8DC"/>
+            <rect x="157.500" y="15.500" width="17" height="5" rx="2.500" fill="#DDE8DC"/>
+            <rect x="123" y="38" width="44" height="30" rx="9" fill="url(#azTower)"/>
+            <rect x="65" y="64" width="160" height="62" rx="31" fill="url(#azHull)"/>
+            <circle cx="145" cy="95" r="14" fill="#9CBB9C"/>
+            <circle cx="145" cy="95" r="10" fill="#1E3A38"/>
+            <circle cx="145" cy="95" r="6" fill="#4C6F85"/>
+          </g>
+        </svg>
+        <h1>Subzoom</h1>
+        <p class="az-kicker">Reise nach innen</p>
+        <div class="az-lines" id="azLines">
+          <p>Wir machen jetzt eine Reise, mit einem kleinen U‑Boot.</p>
+          <p>Wir tauchen ab, unter die Oberfläche des Tages. Oben bleiben die Wellen, der Lärm und die Gedanken.</p>
+          <p>Je tiefer wir kommen, desto leiser wird es. Du musst nichts tun, nur atmen und mitkommen.</p>
+          <p>Bereit zum Abtauchen?</p>
+        </div>
+        <button class="az-btn" id="azWeiter" type="button" disabled>Weiter</button>
+      </section>
+
+      <!-- 2. Einstellungen -->
+      <div class="az-setup" id="azSetup" hidden>
+        <section class="az-card" aria-labelledby="azQ">
+          <div class="az-brand"><b>SUBZOOM</b><span>Reise nach innen</span></div>
+          <p class="az-q" id="azQ">Wie lange möchtest du dir Zeit nehmen?</p>
+          <div class="az-chips" id="azChips" role="group" aria-label="Dauer">
+            <button class="az-chip" type="button" data-min="5" aria-pressed="false">5 min</button>
+            <button class="az-chip" type="button" data-min="10" aria-pressed="true">10 min</button>
+            <button class="az-chip" type="button" data-min="15" aria-pressed="false">15 min</button>
+            <button class="az-chip" type="button" data-min="20" aria-pressed="false">20 min</button>
+            <button class="az-chip" type="button" data-min="30" aria-pressed="false">30 min</button>
+            <button class="az-chip" type="button" id="azCustomBtn" aria-pressed="false">Eigene</button>
+          </div>
+          <div class="az-custom" id="azCustom" hidden>
+            <button class="az-step" type="button" id="azMinus" aria-label="Eine Minute weniger">−</button>
+            <output id="azMinOut" aria-live="polite">10 min</output>
+            <button class="az-step" type="button" id="azPlus" aria-label="Eine Minute mehr">+</button>
+          </div>
+          <label class="az-wake">
+            <span><strong>Am Ende sanft zurückholen</strong><small>Aus: Du schläfst damit ein. Es bleibt dunkel und still.</small></span>
+            <span class="az-switch"><input type="checkbox" id="azWake" checked><span class="az-track"></span></span>
+          </label>
+          <p class="az-note">Nach gut anderthalb Minuten führt dich die Reise mit geschlossenen Augen weiter. Der Bildschirm wird dann langsam dunkel.</p>
+        </section>
+
+        <div class="az-col" id="azSndSlot">
+          <section class="az-card az-snd" id="azSnd" aria-label="Klang">
+            <div class="az-tiles">
+              <button class="az-tile" type="button" data-mode="submarine" aria-pressed="false">
+                <span class="ic"><svg width="48" height="26" viewBox="0 0 48 26" aria-hidden="true"><rect x="2" y="8" width="3" height="10" rx="1.500" fill="#fff" opacity=".7"/><rect x="26" y="1" width="12" height="8" rx="3" fill="#fff" opacity=".9"/><rect x="4" y="5" width="40" height="16" rx="8" fill="#fff"/><circle cx="26" cy="13" r="3" fill="#3F6A62"/></svg></span>
+                <b>U-Boot</b><small>blubberndes Wasser</small>
+              </button>
+              <button class="az-tile" type="button" data-mode="forest" aria-pressed="false">
+                <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21 3C11 3 4 8 4 15c0 1.500.4 2.800 1 3.900C6.500 14 10 11 15 9c-4 3-6.500 6.500-7.500 11.200.8.500 1.700.8 2.700.8C17 21 21 14 21 3z"/></svg></span>
+                <b>Wald</b><small>Wind in Blättern</small>
+              </button>
+            </div>
+            <div class="az-minis">
+              <button class="az-mini" type="button" data-mode="off" aria-pressed="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="#fff"/><path d="m22 9-6 6m0-6 6 6"/></svg>Stille</button>
+              <button class="az-mini" type="button" data-mode="pink" aria-pressed="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12v0M7 8v8M11 4v16M15 7v10M19 10v4"/></svg>Rosa</button>
+              <button class="az-mini" type="button" data-mode="brown" aria-pressed="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 12v0M7 8v8M11 4v16M15 7v10M19 10v4"/></svg>Braun</button>
+              <button class="az-mini" type="button" data-mode="binaural" aria-pressed="false">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3zM3 19a2 2 0 0 0 2 2h1v-7H3z" fill="#fff"/></svg>Binaural</button>
+            </div>
+            <div class="az-bands" id="azBands" hidden>
+              <button class="az-chip" type="button" data-band="alpha" aria-pressed="true">Alpha (10 Hz)</button>
+              <button class="az-chip" type="button" data-band="theta" aria-pressed="false">Theta (6 Hz)</button>
+            </div>
+            <p class="az-hint" id="azBandHint" hidden>Nur mit Kopfhörern hörbar wirksam.</p>
+            <p class="az-blurb" id="azBlurb" aria-live="polite"></p>
+            <div class="az-vol" id="azVol" hidden>
+              <button class="az-play" type="button" id="azPlay" aria-label="Pause"><svg id="azPlayIc" width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" opacity=".85" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/></svg>
+              <input type="range" id="azVolume" min="0" max="1" step="0.01" value="0.5" aria-label="Lautstärke">
+              <svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="#fff"/><path d="M15.500 8.500a5 5 0 0 1 0 7M18.500 5.500a9 9 0 0 1 0 13"/></svg>
+            </div>
+            <p class="az-load" id="azLoad" aria-live="polite"></p>
+            <div class="az-end" id="azEnd" hidden><button class="az-chip" type="button" id="azEndBtn">Beenden</button></div>
+          </section>
+        </div>
+
+        <div class="az-begin-wrap az-panel">
+          <button class="az-btn begin" type="button" id="azBegin">Beginnen</button>
+          <p class="az-credit">Eine App von baelli-innovations</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Sitzung (Vollbild) -->
+    <div class="az-sess" id="azSess">
+      <div class="az-veil" id="azVeil"></div>
+      <div class="az-ring" id="azRing"></div>
+      <div class="az-msg" id="azMsg">
+        <div class="az-main" id="azMain" aria-live="polite"></div>
+        <div class="az-prompt" id="azPrompt" hidden>
+          <p>Atme weiter, in deinem eigenen ruhigen Rhythmus, ohne den Atem anzuhalten.</p>
+          <p id="azP2">Schliesse in fünf Sekunden die Augen.</p>
+          <p id="azP3">Vielleicht ahnst du dann die Farben durch die geschlossenen Lider.</p>
+        </div>
+        <div class="az-num" id="azNum" aria-hidden="true"></div>
+        <div class="az-sub" id="azSubTxt" hidden>Das U-Boot wartet, wenn du wieder abtauchen magst.</div>
+      </div>
+      <div class="az-dark" id="azDark"></div>
+      <button class="az-fs" type="button" id="azFs" hidden>Vollbild</button>
+      <div class="az-menu hidden" id="azMenu">
+        <div class="az-count" id="azCount"></div>
+        <div id="azMenuSlot" style="width:100%;display:flex;justify-content:center"></div>
+      </div>
+      <button class="az-finish" type="button" id="azFinish" hidden>Zurück zum Start</button>
+    </div>
+  </main>
+
+  <section class="az-info fade-in">
+    <h2>Gut zu wissen</h2>
+    <p><strong>Wie es funktioniert:</strong> Zuerst atmen Sie nach einem festen Rhythmus: vier Sekunden ein, sieben anhalten, acht aus. Dann schliessen Sie die Augen, der Bildschirm wird langsam dunkel und es bleibt nur der Klang. Wer am Ende zurückgeholt werden möchte, hört eine sanfte Stimme.</p>
+    <p><strong>Kopfhörer</strong> sind für die binauralen Töne nötig, bei den anderen Klängen ist es Geschmackssache. Stellen Sie die Lautstärke eher leise ein.</p>
+    <p><strong>Datenschutz:</strong> Die Reise läuft ganz in Ihrem Browser. Es wird nichts gespeichert und nichts übermittelt.</p>
+    <p class="az-disclaimer">Subzoom beschreibt, was geschieht, und verspricht keine Wirkung. Es ersetzt keine ärztliche oder therapeutische Behandlung. Wenn Ihnen beim Atemanhalten schwindlig wird, atmen Sie einfach normal weiter. Nicht beim Autofahren oder beim Bedienen von Maschinen verwenden.</p>
+  </section>
+
+  <section class="az-app">
+    <h2>Gratis für unterwegs</h2>
+    <p class="lead">Subzoom gibt es auch als kostenlose App für iPhone und iPad: ohne Konto, ohne Werbung. So haben Sie das U-Boot dabei, wenn es unterwegs zu laut wird.</p>
+    <div class="app-card">
+      <img class="app-icon" src="images/app-subzoom.jpg" width="96" height="96" alt="Subzoom – App-Symbol: ein U-Boot unter Wasser" loading="lazy">
+      <div class="app-card-text">
+        <a class="badge-store" href="https://apps.apple.com/ch/app/subzoom-reise-nach-innen/id6827326550" target="_blank" rel="noopener noreferrer"><img src="images/badge-app-store.png" width="144" height="48" alt="Download on the App Store" loading="lazy"></a>
+        <p class="app-hinweis">Für iPhone und iPad (ab iOS 16). Aktuell nicht für Android.</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem"><a href="ablauf.html" class="btn btn-outline" style="color:var(--teal-dark);border-color:var(--teal)">Mehr als eine Pause? So läuft eine Sitzung ab →</a></p>
+  </section>
+
+  <section class="invitation">
+    <p class="invitation-text fade-in">
+      Bereit für den nächsten Schritt?<br>
+      <strong>Ich freue mich darauf, Sie zu begleiten.</strong>
+    </p>
+    <div class="contact-row fade-in">
+      <a href="tel:+41565351543">Anrufen</a>
+      <button class="btn-kontakt" onclick="openKontakt()">✉ Nachricht</button>
+    </div>
+    <p class="praxis-hint fade-in">Praxis in Muri AG · Sitzungen auch online möglich</p>
+  </section>
+
+  
+  <!-- KONTAKT POPUP -->
+  <div id="kontakt-overlay" onclick="closeKontakt(event)">
+    <div class="kontakt-modal">
+      <button class="kontakt-close" onclick="closeKontakt()">&times;</button>
+      <h2>Kontaktanfrage</h2>
+      <p class="kontakt-hint">Schreiben Sie mir kurz, worum es geht. Ich melde mich in der Regel innert eines Arbeitstages.</p>
+      <form id="kontakt-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="sendKontakt(event)">
+        <input type="hidden" name="access_key" value="8c406a0c-f877-4510-b505-d80397eaa93c">
+        <input type="hidden" name="subject" value="Neue Anfrage über hypnozoom.ch">
+        <input type="hidden" name="from_name" value="hypnozoom.ch Kontaktformular">
+        <input type="checkbox" name="botcheck" class="kontakt-hp" tabindex="-1" autocomplete="off">
+        <div class="kontakt-row">
+          <div class="kontakt-field">
+            <label>Vorname</label>
+            <input type="text" name="vorname" autocomplete="given-name" required placeholder="Ihr Vorname">
+          </div>
+          <div class="kontakt-field">
+            <label>Nachname</label>
+            <input type="text" name="nachname" autocomplete="family-name" required placeholder="Ihr Nachname">
+          </div>
+        </div>
+        <div class="kontakt-field">
+          <label>Telefon</label>
+          <input type="tel" name="telefon" autocomplete="tel" placeholder="z.B. 056 123 45 67">
+        </div>
+        <div class="kontakt-field">
+          <label>E-Mail</label>
+          <input type="email" name="email" autocomplete="email" required placeholder="ihre@email.ch">
+        </div>
+        <div class="kontakt-field">
+          <label>Ihre Nachricht</label>
+          <textarea name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Anliegen…"></textarea>
+        </div>
+        <button type="submit" class="kontakt-submit">Nachricht senden →</button>
+        <p class="kontakt-status" id="kontakt-status" role="status" aria-live="polite"></p>
+        <p class="kontakt-datenschutz">Ihre Angaben verwende ich ausschliesslich, um Ihre Anfrage zu beantworten. Näheres in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </form>
+      <p class="kontakt-direkt">Oder direkt: <a href="tel:+41565351543">056 535 15 43</a> · <a href="mailto:info@baelli.com">info@baelli.com</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="certifications">
+      <p class="cert-label">Mitgliedschaften &amp; Zertifizierungen</p>
+      <div class="cert-logos">
+        <div class="cert-block">
+          <a href="https://www.sbvh.ch" target="_blank" rel="noopener noreferrer" class="cert-item cert-item-sbvh" title="SBVH – Schweizerischer Berufsverband für Hypnosetherapie">
+            <img src="images/Logo_SBVH_2023.png" alt="SBVH Certified Member – Schweizerischer Berufsverband für Hypnosetherapie" loading="lazy">
+          </a>
+          <p class="cert-caption">Mitglied im Berufsverband<br>SBVH / APSH</p>
+        </div>
+        <div class="cert-block">
+          <div class="cert-item" title="Omni Hypnosis Training Center – Ausgebildeter Omni Hypnosetherapeut">
+            <img src="images/OHTC_sw.png" alt="OHTC – Omni Hypnosis Training Center, ausgebildeter Omni Hypnosetherapeut" loading="lazy">
+          </div>
+          <p class="cert-caption">Ausgebildeter<br>OMNI-Hypnosetherapeut</p>
+        </div>
+        <div class="cert-block">
+          <div class="cert-item" title="ISO 9001 – zertifizierte OMNI-Hypnosetherapie-Ausbildung">
+            <img src="images/ISO.jpg" alt="ISO 9001 – die OMNI-Hypnosetherapie-Ausbildung ist nach ISO 9001 zertifiziert" loading="lazy">
+          </div>
+          <p class="cert-caption">ISO 9001 – zertifizierte<br>OMNI-Ausbildung</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-logo">
+      <span style="font-size:1.3rem;font-weight:700;color:var(--teal-light);letter-spacing:0.02em;">HypnoZoom</span>
+    </div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+    <p class="footer-parent">Eine Website von baelli-innovations</p>
+    <p>© 2026 hypnozoom · Markus Baelli · Muri AG</p>
+  </footer>
+
+  <script src="abtauchen.js" defer></script>
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Kontakt-Popup
+    function openKontakt() {
+      document.getElementById('kontakt-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeKontakt(e) {
+      if (e && e.target !== document.getElementById('kontakt-overlay')) return;
+      document.getElementById('kontakt-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.getElementById('kontakt-overlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+    function sendKontakt(e) {
+      e.preventDefault();
+      const f = e.target;
+      const status = document.getElementById('kontakt-status');
+      const key = f.querySelector('input[name="access_key"]').value;
+      const btn = f.querySelector('.kontakt-submit');
+      status.style.display = 'block';
+      if (key.indexOf('EINSETZEN') !== -1) {
+        status.className = 'kontakt-status fehler';
+        status.textContent = 'Der Formularversand ist noch nicht aktiviert. Bitte rufen Sie an oder schreiben Sie an info@baelli.com – beides steht direkt darunter.';
+        return;
+      }
+      status.className = 'kontakt-status';
+      status.textContent = 'Wird gesendet …';
+      btn.disabled = true;
+      fetch(f.action, { method: 'POST', body: new FormData(f) })
+        .then(r => r.json())
+        .then(d => {
+          if (d.success) {
+            document.getElementById('kontakt-form').innerHTML =
+              '<div class="kontakt-bestaetigung">' +
+              '<div class="check-icon">✓</div>' +
+              '<h3>Vielen Dank für Ihre Nachricht!</h3>' +
+              '<p>Ihre Anfrage ist bei mir angekommen.<br>Ich melde mich in der Regel innert eines Arbeitstages.</p>' +
+              '<button class="btn-schliessen" onclick="closeKontakt()">Schliessen</button>' +
+              '</div>';
+          } else {
+            zeigeFehler(status, btn);
+          }
+        })
+        .catch(() => zeigeFehler(status, btn));
+    }
+    function zeigeFehler(status, btn) {
+      btn.disabled = false;
+      status.className = 'kontakt-status fehler';
+      status.textContent = 'Das Senden hat leider nicht geklappt. Bitte rufen Sie an unter 056 535 15 43 oder schreiben Sie an info@baelli.com.';
+    }
+  </script>
+</body>
+</html>
