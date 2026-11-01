@@ -538,5 +538,9 @@
   $('azFinish').addEventListener('click', endSession);
   document.addEventListener('fullscreenchange', function () { if (S.menuVisible) showMenu(true); });
 
+  // iPhone-Safari kennt kein Vollbild für Seiten: Hinweis auf den Weg über den Home-Bildschirm
+  var standalone = (window.navigator.standalone === true) || (window.matchMedia && matchMedia('(display-mode: fullscreen), (display-mode: standalone)').matches);
+  if (!fsAvailable() && !standalone && /iPhone|iPod/.test(navigator.userAgent)) $('azFsHint').hidden = false;
+
   ui.syncSound(); ui.syncTime();
 })();

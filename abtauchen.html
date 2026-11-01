@@ -2,9 +2,16 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#4F7389">
+  <link rel="manifest" href="abtauchen.webmanifest">
+  <link rel="apple-touch-icon" href="images/app-subzoom.jpg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Subzoom">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom</title>
-  <meta name="description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta name="description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="abtauchen.css">
   <meta name="robots" content="index, follow">
@@ -12,14 +19,14 @@
   <link rel="canonical" href="https://hypnozoom.ch/abtauchen.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
-  <meta property="og:description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta property="og:description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <meta property="og:url" content="https://hypnozoom.ch/abtauchen.html">
   <meta property="og:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
   <meta property="og:locale" content="de_CH">
   <meta property="og:site_name" content="HypnoZoom">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
-  <meta name="twitter:description" content="Eine kostenlose Atem- und Klangreise im Browser: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta name="twitter:description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <meta name="twitter:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
   <script type="application/ld+json">
   {
@@ -91,6 +98,7 @@
         </svg>
         <h1>Subzoom</h1>
         <p class="az-kicker">Reise nach innen</p>
+        <p class="az-kicker2">Eine Atem- und Achtsamkeitsübung</p>
         <div class="az-lines" id="azLines">
           <p>Wir machen jetzt eine Reise, mit einem kleinen U‑Boot.</p>
           <p>Wir tauchen ab, unter die Oberfläche des Tages. Oben bleiben die Wellen, der Lärm und die Gedanken.</p>
@@ -165,7 +173,9 @@
         </div>
 
         <div class="az-begin-wrap az-panel">
+          <p class="az-keine">Subzoom ist keine Hypnose und keine Therapie, sondern eine kurze Atem- und Klangübung zur Entspannung. Du bleibst jederzeit selbst bestimmt und kannst durch Antippen beenden.</p>
           <button class="az-btn begin" type="button" id="azBegin">Beginnen</button>
+          <p class="az-hint az-fshint" id="azFsHint" hidden>Tipp für Vollbild auf dem iPhone: In Safari auf «Teilen» tippen, «Zum Home-Bildschirm» wählen und Subzoom von dort öffnen.</p>
           <p class="az-credit">Eine App von baelli-innovations</p>
         </div>
       </div>
@@ -196,11 +206,13 @@
   </main>
 
   <section class="az-info fade-in">
-    <h2>Gut zu wissen</h2>
+    <h2>Was Subzoom ist, und was nicht</h2>
+    <p><strong>Subzoom ist keine Hypnose und keine Therapie.</strong> Es ist eine kurze Atem- und Achtsamkeitsübung mit Klang: kein Gegenüber, keine Behandlung, kein Versprechen auf eine Wirkung. Sie bleiben jederzeit selbst bestimmt und können durch Antippen beenden.</p>
+    <p>Wer wissen möchte, wie eine Hypnosesitzung in meiner Praxis abläuft, findet es unter <a href="ablauf.html">Ablauf</a>.</p>
     <p><strong>Wie es funktioniert:</strong> Zuerst atmen Sie nach einem festen Rhythmus: vier Sekunden ein, sieben anhalten, acht aus. Dann schliessen Sie die Augen, der Bildschirm wird langsam dunkel und es bleibt nur der Klang. Wer am Ende zurückgeholt werden möchte, hört eine sanfte Stimme.</p>
     <p><strong>Kopfhörer</strong> sind für die binauralen Töne nötig, bei den anderen Klängen ist es Geschmackssache. Stellen Sie die Lautstärke eher leise ein.</p>
     <p><strong>Datenschutz:</strong> Die Reise läuft ganz in Ihrem Browser. Es wird nichts gespeichert und nichts übermittelt.</p>
-    <p class="az-disclaimer">Subzoom beschreibt, was geschieht, und verspricht keine Wirkung. Es ersetzt keine ärztliche oder therapeutische Behandlung. Wenn Ihnen beim Atemanhalten schwindlig wird, atmen Sie einfach normal weiter. Nicht beim Autofahren oder beim Bedienen von Maschinen verwenden.</p>
+    <p class="az-disclaimer">Subzoom ersetzt keine ärztliche oder therapeutische Behandlung. Wenn Ihnen beim Atemanhalten schwindlig wird, atmen Sie einfach normal weiter. Nicht beim Autofahren oder beim Bedienen von Maschinen verwenden.</p>
   </section>
 
   <section class="az-app">
