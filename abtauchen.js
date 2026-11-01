@@ -483,7 +483,8 @@
     if (e.target.closest('#azMenu') || e.target.closest('#azFinish') || e.target.closest('#azFs')) return;
     if (S.menuVisible) { clearTimeout(S.hideTimer); showMenu(false); } else poke();
   });
-  menu.addEventListener('click', poke);
+  menu.addEventListener('click', function (e) { if (e.target.closest('#azCloseBtn')) return; poke(); });
+  $('azCloseBtn').addEventListener('click', function () { clearTimeout(S.hideTimer); showMenu(false); });
   $('azFs').addEventListener('click', function () { if (inFs()) exitFs(); else enterFs(); setTimeout(function () { showMenu(true); }, 150); });
 
   function lockScroll(on) { document.documentElement.style.overflow = on ? 'hidden' : ''; document.body.style.overflow = on ? 'hidden' : ''; }

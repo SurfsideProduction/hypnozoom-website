@@ -153,3 +153,34 @@
 .app-hinweis { margin: 0.8rem 0 0; font-size: 0.85rem; color: var(--gray); }
 @media (max-width: 600px) { .app-card { flex-direction: column; } .app-card-text { text-align: center; } .az-intro h1 { font-size: 36px; } }
 @media (prefers-reduced-motion: reduce) { .az-lines p { transition: none; } .az-fadein { animation: none; } }
+
+/* Menü während der Reise: kompakter; Tippen neben die Karte blendet es aus */
+.az-menu { pointer-events: none; }
+.az-menu > * { pointer-events: auto; }
+.az-menu.hidden > * { pointer-events: none; }
+.az-menu .az-card { padding: 12px; border-radius: 20px; max-height: calc(100vh - 90px); max-height: calc(100svh - 90px); overflow-y: auto; overscroll-behavior: contain; }
+.az-menu .az-tiles { gap: 6px; }
+.az-menu .az-tile { padding: 7px 4px; gap: 2px; border-radius: 14px; }
+.az-menu .az-tile .ic { height: 20px; }
+.az-menu .az-tile .ic svg { transform: scale(0.8); }
+.az-menu .az-tile b { font-size: 14px; }
+.az-menu .az-tile small { font-size: 10px; }
+.az-menu .az-minis { margin-top: 6px; gap: 6px; }
+.az-menu .az-mini { padding: 5px 2px; gap: 2px; font-size: 11px; border-radius: 12px; }
+.az-menu .az-bands { margin-top: 8px; }
+.az-menu .az-chip { padding: 7px 4px; font-size: 13px; }
+.az-menu .az-blurb { font-size: 12px; line-height: 1.4; margin-top: 8px; min-height: 0; }
+.az-menu .az-vol { margin-top: 8px; }
+.az-menu .az-play { width: 32px; height: 32px; }
+.az-menu .az-end { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.az-count { font-size: 14px; padding: 4px 12px; }
+@media (max-height: 520px) {
+  .az-menu { padding-bottom: calc(8px + env(safe-area-inset-bottom)); gap: 6px; }
+  .az-menu .az-card { max-width: 600px; }
+  .az-menu .az-tiles { grid-template-columns: 1fr 1fr; }
+  .az-menu .az-tile { flex-direction: row; justify-content: center; gap: 8px; padding: 6px; }
+  .az-menu .az-tile .ic { height: 20px; }
+  .az-menu .az-tile small { display: none; }
+  .az-menu .az-blurb { display: none; }
+  .az-menu .az-hint { display: none; }
+}

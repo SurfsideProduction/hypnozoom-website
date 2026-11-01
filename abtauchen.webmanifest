@@ -1,0 +1,20 @@
+{
+ "name": "Subzoom – Reise nach innen",
+ "short_name": "Subzoom",
+ "description": "Eine kostenlose Atem- und Klangreise von HypnoZoom.",
+ "start_url": "abtauchen.html",
+ "scope": "/",
+ "display": "fullscreen",
+ "orientation": "any",
+ "background_color": "#4F7389",
+ "theme_color": "#4F7389",
+ "lang": "de",
+ "icons": [
+  {
+   "src": "images/app-subzoom.jpg",
+   "sizes": "192x192",
+   "type": "image/jpeg",
+   "purpose": "any"
+  }
+ ]
+}
