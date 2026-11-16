@@ -270,7 +270,7 @@
     voiceCache: {},
     prepareVoices: function () {
       if (!this.ensure()) return;
-      var keys = ['surface', 'back', 'eyes', 'wish_morning', 'wish_day', 'wish_evening', 'wish_night'];
+      var keys = ['uboot', 'back', 'wish_morning', 'wish_day', 'wish_evening', 'wish_night'];
       var me = this;
       keys.forEach(function (k) { me.load('voice_' + k).catch(function () {}); });
     },
@@ -301,8 +301,8 @@
     guide: function (surfacing, key) {
       this.cancelGuide();
       this.chime();
-      this.voice(surfacing ? 'surface' : 'back', 3.0);
-      this.voice('eyes', 11.5);
+      // Flüsterstimme (Stand App 1.1): U-Boot «auftauchen – Augen – wieder oben» bzw. sonst «zurück – Augen» als je eine Datei
+      this.voice(surfacing ? 'uboot' : 'back', 3.0);
       this.voice(key, 23.5);
     },
     cancelGuide: function () { this.voiceNodes.forEach(function (n) { try { n.stop(); } catch (e) {} }); this.voiceNodes = []; }
@@ -408,7 +408,7 @@
       var stage_ = since < 11 ? 0 : (since < 23 ? 1 : (since < 35 ? 2 : 3));
       var h = new Date(S.doneAtWall).getHours();
       var txt = stage_ === 0 ? (S.surfacing ? 'Wir tauchen langsam auf.' : 'Wir kommen langsam zurück.')
-        : (stage_ === 1 ? 'Öffne die Augen, wenn du magst.' : WISH[wishKey(h)]);
+        : (stage_ === 1 ? ((S.surfacing && since >= 17) ? 'Du bist wieder oben.' : 'Öffne deine Augen, wenn du magst.') : WISH[wishKey(h)]);
       promptEl.hidden = true; mainEl.hidden = false; setMain(txt, true); setNum('');
       subEl.hidden = stage_ !== 3;
     } else if (phase === 'prompt') {
