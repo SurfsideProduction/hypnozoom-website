@@ -293,7 +293,7 @@
       var ctx = this.ctx, b = this.buffers['voice_' + key];
       if (!ctx || !b) return;
       var s = ctx.createBufferSource(); s.buffer = b;
-      var g = ctx.createGain(); g.gain.value = 0.9; s.connect(g); g.connect(ctx.destination);
+      var g = ctx.createGain(); g.gain.value = 0.45; s.connect(g); g.connect(ctx.destination);  // Stand App 1.2: Stimmen leiser
       s.start(ctx.currentTime + delay);
       this.voiceNodes.push(s);
     },
@@ -347,7 +347,7 @@
 
   $('azWeiter').addEventListener('click', function () {
     S.phase = 'setup';
-    $('azIntro').hidden = true;
+    $('azIntro').hidden = true; $('azVorab').hidden = true;
     var su = $('azSetup'); su.hidden = false; su.classList.add('az-fadein');
     try { stage.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); } catch (e) {}
     ui.syncTime(); ui.syncSound();
@@ -359,7 +359,6 @@
   $('azCustomBtn').addEventListener('click', function () { S.custom = true; ui.syncTime(); });
   $('azMinus').addEventListener('click', function () { S.minutes = Math.max(3, S.minutes - 1); ui.syncTime(); });
   $('azPlus').addEventListener('click', function () { S.minutes = Math.min(120, S.minutes + 1); ui.syncTime(); });
-  $('azWake').addEventListener('change', function (e) { S.wake = e.target.checked; });
 
   document.querySelectorAll('[data-mode]').forEach(function (b) {
     b.addEventListener('click', function () { Snd.ensure(); Snd.select(b.getAttribute('data-mode')); ui.syncSound(); poke(); });
@@ -489,7 +488,8 @@
 
   function lockScroll(on) { document.documentElement.style.overflow = on ? 'hidden' : ''; document.body.style.overflow = on ? 'hidden' : ''; }
 
-  function begin() {
+  function begin(wake) {
+    S.wake = wake !== false;   // Stand App 1.2: zwei Beginnen-Knöpfe statt Schalter
     Snd.ensure();
     Snd.prepareVoices();
     S.token++;
@@ -533,7 +533,8 @@
     try { stage.scrollIntoView({ block: 'start' }); } catch (e) {}
   }
 
-  $('azBegin').addEventListener('click', begin);
+  $('azBeginWake').addEventListener('click', function () { begin(true); });
+  $('azBeginSleep').addEventListener('click', function () { begin(false); });
   $('azEndBtn').addEventListener('click', endSession);
   $('azFinish').addEventListener('click', endSession);
   document.addEventListener('fullscreenchange', function () { if (S.menuVisible) showMenu(true); });
@@ -541,6 +542,18 @@
   // iPhone-Safari kennt kein Vollbild für Seiten: Hinweis auf den Weg über den Home-Bildschirm
   var standalone = (window.navigator.standalone === true) || (window.matchMedia && matchMedia('(display-mode: fullscreen), (display-mode: standalone)').matches);
   if (!fsAvailable() && !standalone && /iPhone|iPod/.test(navigator.userAgent)) $('azFsHint').hidden = false;
+
+  // Klangkulissen: Hinweisfenster (nur App), Bild erst beim Öffnen laden
+  var kul = $('azKul'), kulBtn = $('azKulBtn');
+  function kulOpen() {
+    var im = $('azKulImg'); if (!im.getAttribute('src')) im.setAttribute('src', im.getAttribute('data-src'));
+    kul.hidden = false; lockScroll(true); $('azKulX').focus();
+  }
+  function kulClose() { if (kul.hidden) return; kul.hidden = true; lockScroll(false); try { kulBtn.focus(); } catch (e) {} }
+  kulBtn.addEventListener('click', kulOpen);
+  $('azKulX').addEventListener('click', kulClose);
+  kul.addEventListener('click', function (e) { if (e.target === kul) kulClose(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') kulClose(); });
 
   ui.syncSound(); ui.syncTime();
 })();

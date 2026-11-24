@@ -194,3 +194,35 @@
 .az-kicker2 { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.85); margin: -12px 0 18px; }
 .az-keine { font-size: 12.5px; font-weight: 300; line-height: 1.5; text-align: center; color: rgba(255,255,255,0.92); text-shadow: none; margin: 0 0 12px; max-width: none; background: rgba(30,60,74,0.5); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); padding: 10px 14px; border-radius: 16px; }
 .az-info a { color: var(--teal-dark); }
+
+/* Stand App 1.2 (24.11.2026): zwei Beginnen-Knöpfe, Restzeit oben, Bild Klangkulissen */
+.az-begins { display: grid; grid-template-columns: 1fr; gap: 10px; width: 100%; max-width: 440px; margin: 0 auto; }
+.az-begins .az-btn { border-radius: 22px; width: 100%; margin: 0; padding: 11px 14px; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1.3; }
+.az-begins .az-btn b { font-size: 16px; font-weight: 500; }
+.az-begins .az-btn small { font-size: 12px; font-weight: 300; opacity: 0.85; }
+.az-sess > .az-count { position: absolute; z-index: 6; top: calc(12px + env(safe-area-inset-top, 0px)); left: 50%; transform: translateX(-50%); opacity: 0; pointer-events: none; transition: opacity 0.6s ease; white-space: nowrap; }
+.az-menu-open > .az-count { opacity: 1; }
+.az-kul { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 12px; padding: 10px 14px; border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; background: rgba(255,255,255,0.14); color: #fff; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+.az-kul:hover { background: rgba(255,255,255,0.24); }
+.az-kul:focus-visible, .az-modal-x:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.az-pill { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 999px; background: #E8C66A; color: #3A2F0B; white-space: nowrap; }
+.az-menu .az-kul { display: none; }
+.az-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(10,22,28,0.72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.az-modal[hidden] { display: none; }
+.az-modal-box { position: relative; width: 100%; max-width: 380px; max-height: calc(100vh - 32px); max-height: calc(100svh - 32px); overflow-y: auto; overscroll-behavior: contain; padding: 22px 20px 18px; border-radius: 24px; background: #1F3B47; color: #fff; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.45); }
+.az-modal-box h2 { font-size: 22px; font-weight: 500; margin: 0 0 6px; color: #fff; }
+.az-modal-lead { font-size: 14px; font-weight: 300; line-height: 1.5; margin: 0 auto 14px; max-width: none; color: rgba(255,255,255,0.92); }
+.az-modal-img { display: block; width: 160px; max-width: 60%; height: auto; margin: 0 auto 14px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+.az-modal-list { list-style: none; margin: 0 0 12px; padding: 0; text-align: left; font-size: 13.5px; font-weight: 300; line-height: 1.5; }
+.az-modal-list li { position: relative; padding: 3px 0 3px 18px; color: rgba(255,255,255,0.95); }
+.az-modal-list li::before { content: ""; position: absolute; left: 3px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: #95B895; }
+.az-modal-note { font-size: 12px; font-weight: 300; line-height: 1.45; margin: 8px auto; max-width: none; color: rgba(255,255,255,0.78); }
+.az-modal .badge-store { display: inline-block; margin-top: 4px; }
+.az-modal-x { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(255,255,255,0.14); color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+.az-vorab { font-size: 13.5px; font-weight: 300; line-height: 1.5; text-align: center; color: rgba(255,255,255,0.95); text-shadow: none; margin: 0; background: rgba(30,60,74,0.5); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); padding: 10px 14px; border-radius: 16px; }
+.az-vorab strong { font-weight: 500; color: #fff; }
+.az-vorab a { color: #fff; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+#was-ist-subzoom { scroll-margin-top: 80px; }
+@media (max-width: 600px) { .az-stage { padding-top: 86px; } .az-flow { gap: 12px; } .az-intro .az-sub-svg { width: 200px; } }
+@media (min-width: 601px) { .az-vorab.az-panel { max-width: 720px; } }
+@media (min-width: 601px) and (max-height: 900px) { .az-stage { padding-top: 90px; } .az-intro .az-sub-svg { width: 220px; } }

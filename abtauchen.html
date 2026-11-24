@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-title" content="Subzoom">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom</title>
-  <meta name="description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta name="description" content="Kostenlose Meditation im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="abtauchen.css">
   <meta name="robots" content="index, follow">
@@ -19,21 +19,21 @@
   <link rel="canonical" href="https://hypnozoom.ch/abtauchen.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
-  <meta property="og:description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta property="og:description" content="Kostenlose Meditation im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <meta property="og:url" content="https://hypnozoom.ch/abtauchen.html">
   <meta property="og:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
   <meta property="og:locale" content="de_CH">
   <meta property="og:site_name" content="HypnoZoom">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Abtauchen – Subzoom, eine Reise nach innen | HypnoZoom">
-  <meta name="twitter:description" content="Kostenlose Atem- und Klangübung im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
+  <meta name="twitter:description" content="Kostenlose Meditation im Browser, keine Hypnose: Ein U-Boot taucht mit Ihnen ab, weg vom Alltagslärm. Atmen, Augen schliessen, der Bildschirm wird dunkel.">
   <meta name="twitter:image" content="https://hypnozoom.ch/images/app-subzoom.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Subzoom: Reise nach innen",
-    "description": "Atem- und Klangreise: Atmen, Augen schliessen, der Bildschirm wird dunkel. Mit Klängen wie U-Boot, Wald oder Rauschen.",
+    "description": "Meditation mit Atem und Klang: Atmen, Augen schliessen, der Bildschirm wird dunkel. Mit Klängen wie U-Boot, Wald oder Rauschen.",
     "operatingSystem": "Alle (Browser); App für iOS 16.0 oder neuer",
     "browserRequirements": "Moderner Browser mit Web Audio",
     "applicationCategory": "LifestyleApplication",
@@ -68,6 +68,9 @@
 
     <div class="az-flow" id="azFlow">
 
+      <!-- Vorab: was den Besucher hier erwartet (24.11.2026) -->
+      <p class="az-vorab az-panel" id="azVorab"><strong>Eine kostenlose Meditation zum Ausprobieren, direkt hier im Browser.</strong> Subzoom ist keine Hypnose und keine Therapie, kann Sie aber auf eine Sitzung einstimmen. <a href="#was-ist-subzoom">Was es genau ist, steht weiter unten&nbsp;↓</a></p>
+
       <!-- 1. Einstieg: U-Boot und kleine Geschichte -->
       <section class="az-card az-panel az-intro az-fadein" id="azIntro">
         <svg class="az-sub-svg" viewBox="0 0 290 190" aria-hidden="true" focusable="false">
@@ -98,14 +101,14 @@
         </svg>
         <h1>Subzoom</h1>
         <p class="az-kicker">Reise nach innen</p>
-        <p class="az-kicker2">Eine Atem- und Achtsamkeitsübung</p>
+        <p class="az-kicker2">Eine Meditation für den Weg nach innen</p>
         <div class="az-lines" id="azLines">
           <p>Wir machen jetzt eine Reise, mit einem kleinen U‑Boot.</p>
           <p>Wir tauchen ab, unter die Oberfläche des Tages. Oben bleiben die Wellen, der Lärm und die Gedanken.</p>
           <p>Je tiefer wir kommen, desto leiser wird es. Du musst nichts tun, nur atmen und mitkommen.</p>
           <p>Bereit zum Abtauchen?</p>
         </div>
-        <button class="az-btn" id="azWeiter" type="button" disabled>Weiter</button>
+        <button class="az-btn" id="azWeiter" type="button" disabled>Jetzt abtauchen</button>
       </section>
 
       <!-- 2. Einstellungen -->
@@ -126,10 +129,6 @@
             <output id="azMinOut" aria-live="polite">10 min</output>
             <button class="az-step" type="button" id="azPlus" aria-label="Eine Minute mehr">+</button>
           </div>
-          <label class="az-wake">
-            <span><strong>Am Ende sanft zurückholen</strong><small>Aus: Du schläfst damit ein. Es bleibt dunkel und still.</small></span>
-            <span class="az-switch"><input type="checkbox" id="azWake" checked><span class="az-track"></span></span>
-          </label>
           <p class="az-note">Nach gut anderthalb Minuten führt dich die Reise mit geschlossenen Augen weiter. Der Bildschirm wird dann langsam dunkel.</p>
         </section>
 
@@ -167,6 +166,7 @@
               <input type="range" id="azVolume" min="0" max="1" step="0.01" value="0.5" aria-label="Lautstärke">
               <svg width="20" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".85" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="#fff"/><path d="M15.500 8.500a5 5 0 0 1 0 7M18.500 5.500a9 9 0 0 1 0 13"/></svg>
             </div>
+            <button class="az-kul" type="button" id="azKulBtn" aria-haspopup="dialog"><span>Klangkulissen mischen</span><span class="az-pill">nur in der App</span></button>
             <p class="az-load" id="azLoad" aria-live="polite"></p>
             <div class="az-end" id="azEnd" hidden><button class="az-chip" type="button" id="azCloseBtn">Menü schliessen</button><button class="az-chip" type="button" id="azEndBtn">Beenden</button></div>
           </section>
@@ -174,8 +174,11 @@
 
         <div class="az-begin-wrap az-panel">
           <p class="az-keine az-tipp">Am besten im dunklen Raum, auf dem Rücken, das Gerät auf der Brust. Lass dich vom Klang in dein Kopfkino tragen. Mit geschlossenen Augen siehst du später sanfte Farben.</p>
-          <p class="az-keine">Subzoom ist keine Hypnose und keine Therapie, sondern eine kurze Atem- und Klangübung zur Entspannung. Du bleibst jederzeit selbst bestimmt und kannst durch Antippen beenden.</p>
-          <button class="az-btn begin" type="button" id="azBegin">Beginnen</button>
+          <p class="az-keine">Subzoom ist keine Hypnose und keine Therapie, sondern eine Meditation mit Atem und Klang. Du bleibst jederzeit selbst bestimmt und kannst durch Antippen beenden.</p>
+          <div class="az-begins">
+            <button class="az-btn begin" type="button" id="azBeginWake"><b>Beginnen und sanft zurückholen</b><small>Am Ende führt dich die Stimme zurück.</small></button>
+            <button class="az-btn begin" type="button" id="azBeginSleep"><b>Beginnen und einschlafen</b><small>Am Ende bleibt es dunkel und still.</small></button>
+          </div>
           <p class="az-hint az-fshint" id="azFsHint" hidden>Tipp für Vollbild auf dem iPhone: In Safari auf «Teilen» tippen, «Zum Home-Bildschirm» wählen und Subzoom von dort öffnen.</p>
           <p class="az-credit">Eine App von baelli-innovations</p>
         </div>
@@ -198,19 +201,37 @@
       </div>
       <div class="az-dark" id="azDark"></div>
       <button class="az-fs" type="button" id="azFs" hidden>Vollbild</button>
+      <div class="az-count" id="azCount"></div>
       <div class="az-menu hidden" id="azMenu">
-        <div class="az-count" id="azCount"></div>
         <div id="azMenuSlot" style="width:100%;display:flex;justify-content:center"></div>
       </div>
       <button class="az-finish" type="button" id="azFinish" hidden>Zurück zum Start</button>
     </div>
+    <!-- Klangkulissen: nur Hinweis, kein Ton, kein Kauf (Stand App 1.2) -->
+    <div class="az-modal" id="azKul" role="dialog" aria-modal="true" aria-labelledby="azKulT" hidden>
+      <div class="az-modal-box">
+        <button class="az-modal-x" type="button" id="azKulX" aria-label="Schliessen">×</button>
+        <h2 id="azKulT">Klangkulissen</h2>
+        <p class="az-modal-lead">Mische deinen Ort, die Tageszeit und das Wetter. Das gibt es nur in der App: Hier im Browser lassen sich die Klangkulissen weder hören noch kaufen.</p>
+        <img class="az-modal-img" id="azKulImg" data-src="images/app-subzoom-klangkulissen.jpg" width="240" height="522" alt="Subzoom-App: Klangkulissen-Mischer mit Ort, Tageszeit und Wetter">
+        <ul class="az-modal-list">
+          <li>6 Orte: Strand, Bergbach, Feuerplatz, Wald, Stadtpark, Bergtempel</li>
+          <li>Tageszeit und Wetter dazumischen und einzeln leiser stellen</li>
+          <li>Jede Kulisse in der App 20 Sekunden gratis probehören</li>
+          <li>Freischalten in der App: einmaliger Kauf, CHF 4.00, kein Abo</li>
+        </ul>
+        <a class="badge-store" href="https://apps.apple.com/ch/app/subzoom-reise-nach-innen/id6827326550" target="_blank" rel="noopener noreferrer"><img src="images/badge-app-store.png" width="144" height="48" alt="Download on the App Store" loading="lazy"></a>
+        <p class="az-modal-note">Für iPhone und iPad (ab iOS 16).</p>
+      </div>
+    </div>
   </main>
 
-  <section class="az-info fade-in">
+  <section class="az-info fade-in" id="was-ist-subzoom">
     <h2>Was Subzoom ist, und was nicht</h2>
-    <p><strong>Subzoom ist keine Hypnose und keine Therapie.</strong> Es ist eine kurze Atem- und Achtsamkeitsübung mit Klang: kein Gegenüber, keine Behandlung, kein Versprechen auf eine Wirkung. Sie bleiben jederzeit selbst bestimmt und können durch Antippen beenden.</p>
+    <p><strong>Subzoom ist keine Hypnose und keine Therapie.</strong> Es ist eine Meditation mit Atem und Klang: kein Gegenüber, keine Behandlung, kein Versprechen auf eine Wirkung. Sie bleiben jederzeit selbst bestimmt und können durch Antippen beenden.</p>
+    <p><strong>Wozu es dient:</strong> Sie üben, was jede Entspannung und jede Hypnose braucht: sich führen lassen, atmen, die Augen schliessen, loslassen. Wer diesen Weg regelmässig übt, kennt ihn, wenn er ihn braucht. Subzoom kann Sie so auf Selbsthypnose oder auf eine Hypnosesitzung vorbereiten.</p>
     <p>Wer wissen möchte, wie eine Hypnosesitzung in meiner Praxis abläuft, findet es unter <a href="ablauf.html">Ablauf</a>.</p>
-    <p><strong>Wie es funktioniert:</strong> Zuerst atmen Sie nach einem festen Rhythmus: vier Sekunden ein, sieben anhalten, acht aus. Dann schliessen Sie die Augen, der Bildschirm wird langsam dunkel und es bleibt nur der Klang. Der Klang trägt Sie in Ihr Kopfkino. Wer am Ende zurückgeholt werden möchte, hört eine sanfte Stimme.</p>
+    <p><strong>Wie es funktioniert:</strong> Zuerst atmen Sie nach einem festen Rhythmus: vier Sekunden ein, sieben anhalten, acht aus. Dann schliessen Sie die Augen, der Bildschirm wird langsam dunkel und es bleibt nur der Klang. Der Klang trägt Sie in Ihr Kopfkino. Beim Start wählen Sie, ob eine sanfte Stimme Sie am Ende zurückholt oder ob Sie damit einschlafen.</p>
     <p><strong>Am besten</strong> im dunklen Raum, auf dem Rücken liegend, mit dem Handy oder Tablet auf der Brust: Mit geschlossenen Augen nehmen Sie später sanfte Farben durch die Lider wahr.</p>
     <p><strong>Kopfhörer</strong> sind für die binauralen Töne nötig, bei den anderen Klängen ist es Geschmackssache. Stellen Sie die Lautstärke eher leise ein.</p>
     <p><strong>Datenschutz:</strong> Die Reise läuft ganz in Ihrem Browser. Es wird nichts gespeichert und nichts übermittelt.</p>
@@ -220,7 +241,7 @@
   <section class="az-app">
     <h2>Gratis für unterwegs</h2>
     <p class="lead">Subzoom gibt es auch als kostenlose App für iPhone und iPad: ohne Konto, ohne Werbung. So haben Sie das U-Boot dabei, wenn es unterwegs zu laut wird.</p>
-    <p class="lead">Neu in der App: Wer mag, mischt sich eigene Klangkulissen aus Ort, Tageszeit und Wetter (einmaliger In-App-Kauf, CHF 4.00). Alles, was Sie hier im Browser erleben, bleibt auch in der App gratis.</p>
+    <p class="lead">Nur in der App: eigene Klangkulissen aus Ort, Tageszeit und Wetter mischen (einmaliger In-App-Kauf, CHF 4.00). Alles, was Sie hier im Browser erleben, bleibt auch in der App gratis.</p>
     <div class="app-card">
       <img class="app-icon" src="images/app-subzoom.jpg" width="96" height="96" alt="Subzoom – App-Symbol: ein U-Boot unter Wasser" loading="lazy">
       <div class="app-card-text">
